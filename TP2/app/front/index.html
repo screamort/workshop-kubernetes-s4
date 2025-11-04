@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TP2 Front</title>
+</head>
+<body>
+    <h1>TP2 Front</h1>
+    <div id="api-message"></div>
+    <script>
+        fetch("http://localhost:8081/")
+        .then(res => res.json())
+        .then(data => document.getElementById("api-message").innerText = data.message)
+        .catch(err => document.getElementById("api-message").innerText = "API not reachable");
+    </script>
+</body>
+</html>
